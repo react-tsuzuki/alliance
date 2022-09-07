@@ -42,7 +42,6 @@ return [
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
-
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
@@ -62,7 +61,6 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
@@ -77,7 +75,36 @@ return [
             'search_path' => 'public',
             'sslmode' => 'prefer',
         ],
-
+        //kagoya.net customerデータベース(アクセス権限必要)
+        'customer' => [
+            'driver' => 'mysql',
+            'host' => 'o4123s-109.kagoya.net',
+            'port' => '',
+            'database' => env('DB_DATABASE_CUSTOMER', ''),
+            'username' => 'kir304180',
+            'password' => 'X?f4d7F-Ls',
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+         //kagoya.net test_customerデータベース(アクセス権限必要)
+        'test_customer' => [
+            'driver' => 'mysql',
+            'host' => 'o4123s-109.kagoya.net',
+            'port' => '',
+            'database' => 'test_customer',
+            'username' => 'kir304180',
+            'password' => 'X?f4d7F-Ls',
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),

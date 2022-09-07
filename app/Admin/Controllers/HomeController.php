@@ -29,6 +29,11 @@ class HomeController extends Controller
                 // $row->column(4, function (Column $column) {
                 //     $column->append(Dashboard::dependencies());
                 // });
+
+                // vendor/encore/laravel-admin/src/Controllers/Dashboard.phpに遷移
+                $row->column(4, function (Column $column) {
+                    $column->append(Dashboard::customerment());
+                });
             });
     }
 }
