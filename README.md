@@ -19,3 +19,10 @@ https://qiita.com/SawaTszm/items/d90d8f6b7de9f20aca32
 ・php -v (php)
 ・php artisan -v (laravel)
 ・php artisan admin (laravel-admin)
+・php artisan cache:clear
+・php artisan config:clear
+・php artisan route:clear
+・php artisan view:clear
+・php artisan migrate:refresh
+・php artisan route:list
+・php artisan migrate:refresh --seed
