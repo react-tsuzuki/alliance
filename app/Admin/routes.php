@@ -15,4 +15,5 @@ Route::group([
     $router->resource('users', UserController::class);
     $router->resource('staffs', StaffController::class);
     $router->resource('humans', HumanController::class);
+    $router->resource('customer', CustomerController::class);
 });
