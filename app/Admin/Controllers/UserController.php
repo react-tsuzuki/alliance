@@ -7,6 +7,10 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Encore\Admin\Layout\Content;
+use Encore\Admin\Layout\Column;
+use Encore\Admin\Layout\Row;
+use Encore\Admin\Controllers\Dashboard;
 
 class UserController extends AdminController
 {
@@ -16,6 +20,20 @@ class UserController extends AdminController
      * @var string
      */
     protected $title = 'User';
+
+    /**
+     * @param Content $content
+     * @return Content
+     * Content を読み込んで表示にタイトルを表示
+     */
+    public function index(Content $content)
+    {
+        return $content
+            ->header('User')
+            ->title('顧客一覧')
+            ->description('顧客一覧を表示')
+            ->body($this->grid());
+    }
 
     /**
      * Make a grid builder.
@@ -34,6 +52,13 @@ class UserController extends AdminController
         $grid->column('remember_token', __('Remember token'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
+
+        // フィルターを追加
+        $grid->filter(function($filter){
+            $filter->like('name', '氏名');
+            $filter->like('email', 'メールアドレス');
+            $filter->like('department.name', '部署名');
+        });
 
         return $grid;
     }

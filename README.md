@@ -8,6 +8,8 @@ Laravel-admin version 1.8.17
 laravel-admin
 公式：https://laravel-admin.org/docs/en
 
+vender/encore/laravel-adminに編集が必要な箇所を触る
+
 grid columnにlinkをつける
 https://zenn.dev/laiso/articles/af8adc20c38c73
 
